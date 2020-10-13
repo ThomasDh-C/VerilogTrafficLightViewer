@@ -23,11 +23,10 @@ const ImportFromFile = (props) => {
     };
 
     return (
-        <div className='upload-expense'>
+        <div>
             <input type='file'
                 id='file'
-                className='input-file'
-
+                accept='.vcd'
                 onChange={e => handleFileChosen(e.target.files[0])}
             />
         </div>)

@@ -1,8 +1,17 @@
 import React from 'react'
-import Head from 'next/head'
+import styled from 'styled-components'
 import styles from '../styles/Home.module.css'
-import { Row, Col } from 'antd';
+import Head from 'next/head'
 import ImportFromFile from './components/ImportFromFile'
+import TrafficLight from './components/TrafficLight'
+import { Button } from 'antd';
+
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 8px 8px 8px 8px;
+  align-content: space-between;
+`
 
 const Home = () => {
   const [vcdObj, setVCD] = React.useState({})
@@ -18,9 +27,11 @@ const Home = () => {
         <h1 className={styles.title}> VCD viewer </h1>
         <ImportFromFile setVCD={setVCD} />
         <Row>
-          <Col span={6}>col-6</Col>
-          <Col span={18}>col-18</Col>
+          <TrafficLight value="1" />
+          <TrafficLight value="010" />
+
         </Row>
+
       </main>
 
       <footer className={styles.footer}>
