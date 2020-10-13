@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import FileReader from './components/FileReader'
+import ImportFromFile from './components/ImportFromFile'
 
 const Home = () => {
   const [vcdObj, vcdObjSetter] = React.useState(null)
@@ -18,7 +19,8 @@ const Home = () => {
           VCD viewer
         </h1>
 
-        <FileReader setOrgData={vcdObjSetter} />
+        {/* <FileReader vcdObjSetter={vcdObjSetter} /> */}
+        <ImportFromFile vcdObjSetter={vcdObjSetter}/>
       </main>
 
       <footer className={styles.footer}>

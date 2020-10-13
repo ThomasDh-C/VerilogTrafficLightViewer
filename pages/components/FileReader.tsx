@@ -2,9 +2,7 @@ import React from 'react'
 import VCDParser from 'vcd-parser'
 import { Upload, message, Button, Typography } from 'antd'
 import { UploadOutlined } from '@ant-design/icons'
-import read from 'file-reader'
-import * as Papa from 'papaparse'
-import { parse } from 'path'
+
 
 const { Title } = Typography
 const FileReader = (vcdObjSetter) => {
@@ -18,13 +16,12 @@ const FileReader = (vcdObjSetter) => {
         onChange(info) {
             if (info.file.status === 'done') {
                 message.success(`${info.file.name} file uploaded successfully`)
-                const string = info.file.originFileObj
+                const input = info.file.originFileObj
+                reader(input)
 
-
-                const test = read.file(string);
-
+                console.log(input)
                 console.log(string)
-                console.log(test)
+                // console.log(test)
                 VCDParser.parse(string)
                     .then(parsedData => {
                         console.log(parsedData)
@@ -45,7 +42,7 @@ const FileReader = (vcdObjSetter) => {
             <Upload {...uploadProps}>
                 <Button>
                     <UploadOutlined /> Click to Upload
-        </Button>
+                </Button>
             </Upload>
         </>
     )
