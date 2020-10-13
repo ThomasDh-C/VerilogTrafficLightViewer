@@ -1,7 +1,7 @@
 import React from 'react'
 import VCDParser from 'vcd-parser'
 
-const ImportFromFile = (vcdObjSetter) => {
+const ImportFromFile = (setVCD) => {
     let fileReader;
 
     const handleFileRead = (e) => {
@@ -10,7 +10,8 @@ const ImportFromFile = (vcdObjSetter) => {
         VCDParser.parse(content)
             .then(parsedData => {
                 console.log(parsedData)
-                vcdObjSetter(parsedData)
+                console.log(setVCD)
+                setVCD(parsedData)
             })
             .catch(err => {
                 console.error(err);
