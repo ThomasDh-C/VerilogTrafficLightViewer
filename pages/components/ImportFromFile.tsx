@@ -1,17 +1,15 @@
 import React from 'react'
 import VCDParser from 'vcd-parser'
 
-const ImportFromFile = (setVCD) => {
+const ImportFromFile = (props) => {
     let fileReader;
 
     const handleFileRead = (e) => {
         const content = fileReader.result;
-        console.log(content);
         VCDParser.parse(content)
             .then(parsedData => {
                 console.log(parsedData)
-                console.log(setVCD)
-                setVCD(parsedData)
+                props.setVCD(parsedData)
             })
             .catch(err => {
                 console.error(err);
