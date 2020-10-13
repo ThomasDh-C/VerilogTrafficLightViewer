@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import ImportFromFile from './components/ImportFromFile'
 import TrafficLight from './components/TrafficLight'
-import { Button } from 'antd';
+import TimeSlider from './components/TimeSlider'
 
 const Row = styled.div`
   display: flex;
@@ -15,6 +15,11 @@ const Row = styled.div`
 
 const Home = () => {
   const [vcdObj, setVCD] = React.useState({})
+  const [index, setIndex] = React.useState(0)
+
+  const lamp1 = (vcdObj.hasOwnProperty('signal') ? vcdObj.signal[5].wave[index][1] : '000')
+  const lamp2 = (vcdObj.hasOwnProperty('signal') ? vcdObj.signal[6].wave[index][1] : '000')
+
 
   return (
     <div className={styles.container}>
@@ -25,12 +30,14 @@ const Home = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}> VCD viewer </h1>
-        <ImportFromFile setVCD={setVCD} />
-        <Row>
-          <TrafficLight value="1" />
-          <TrafficLight value="010" />
 
+        <ImportFromFile setVCD={setVCD} />
+
+        <Row>
+          <TrafficLight value={lamp1} />
+          <TrafficLight value={lamp2} />
         </Row>
+        <TimeSlider vcdObj={vcdObj} index={index} setIndex={setIndex} />
 
       </main>
 
