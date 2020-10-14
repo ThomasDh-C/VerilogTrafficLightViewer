@@ -16,6 +16,8 @@ const Row = styled.div`
 const Home = () => {
   const [vcdObj, setVCD] = React.useState({})
   const [index, setIndex] = React.useState(0)
+  const [totalTimeWash, setTimeWash] = React.useState(0)
+  const [totalTimeProsp, setTimeProsp] = React.useState(0)
 
   return (
     <div className={styles.container}>
@@ -29,8 +31,8 @@ const Home = () => {
         <ImportFromFile setVCD={setVCD} />
 
         <Row>
-          <SignalCard index={index} vcdObj={vcdObj} />
-          <SignalCard index={index} vcdObj={vcdObj} />
+          <SignalCard index={index} vcdObj={vcdObj} setTotalTime={setTimeWash} street="Washington Road" />
+          <SignalCard index={index} vcdObj={vcdObj} setTotalTime={setTimeProsp} street="Prospect Avenue" />
         </Row>
 
         <TimeSlider vcdObj={vcdObj} index={index} setIndex={setIndex} />

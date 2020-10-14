@@ -1,16 +1,22 @@
 import React from 'react'
 import { Slider, InputNumber, Row, Col } from 'antd';
+import styled from 'styled-components'
+
+const WideDiv = styled.div`
+    width: 100%;
+`
 
 const TimeSlider = (props) => {
-    const intervals = (props.vcdObj.hasOwnProperty('endtime') ? props.vcdObj.endtime / props.vcdObj.timescale.substring(0, props.vcdObj.timescale.length - 2) : 0)
+    const totalTime = (props.vcdObj.hasOwnProperty('endtime') ? props.vcdObj.endtime : 0)
     const min = 0
+
     return (
-        <div>
-            <Row>
+        <WideDiv>
+            <Row >
                 <Col span={12}>
                     <Slider
                         min={min}
-                        max={intervals}
+                        max={totalTime}
                         onChange={(value) => props.setIndex(value)}
                         value={typeof props.index === 'number' ? props.index : 0}
                         step={1}
@@ -19,7 +25,7 @@ const TimeSlider = (props) => {
                 <Col span={4}>
                     <InputNumber
                         min={min}
-                        max={intervals}
+                        max={totalTime}
                         style={{ margin: '0 16px' }}
                         value={props.index}
                         onChange={(value) => props.setIndex(value)}
@@ -27,7 +33,7 @@ const TimeSlider = (props) => {
                     />
                 </Col>
             </Row>
-        </div>
+        </WideDiv>
     )
 }
 

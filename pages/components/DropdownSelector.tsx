@@ -14,7 +14,7 @@ const DropdownSelector = (props) => {
         <Select defaultValue="Set Me" style={{ width: 240 }} onChange={handleChange}>
             {props.vcdObj.hasOwnProperty('signal') &&
                 props.vcdObj.signal.map((value, index) =>
-                    <Option value={index}>{value.signalName}</Option>
+                    <Option value={index} key={index}> {value.signalName} </Option>
                 )
             }
         </Select>

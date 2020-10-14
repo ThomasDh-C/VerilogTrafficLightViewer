@@ -5,8 +5,8 @@ import styled from 'styled-components'
 const TrafficLightmain = styled.div`
     position: relative;
     display: block;
-    top: 50%; 
-    margin-right: 10px;
+    padding-top: 1px;
+    margin-top: 10px;
     background-color: #333333;
     width:120px;
     height:320px;
@@ -35,9 +35,9 @@ const TrafficLight = (props) => {
 
     return (
         <TrafficLightmain>
-            <CustomLight type="radio" colour={red} />
-            <CustomLight type="radio" colour={yellow} />
-            <CustomLight type="radio" colour={green} />
+            <CustomLight colour={red} />
+            <CustomLight colour={yellow} />
+            <CustomLight colour={green} />
         </TrafficLightmain>
     )
 }
