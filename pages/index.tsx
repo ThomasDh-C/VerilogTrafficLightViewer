@@ -3,9 +3,7 @@ import styled from 'styled-components'
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import ImportFromFile from './components/ImportFromFile'
-import TrafficLight from './components/TrafficLight'
 import TimeSlider from './components/TimeSlider'
-import DropdownSelector from './components/DropdownSelector'
 import SignalCard from './components/SignalCard'
 
 const Row = styled.div`
