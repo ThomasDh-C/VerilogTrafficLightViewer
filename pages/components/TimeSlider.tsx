@@ -10,6 +10,7 @@ const WideDiv = styled.div`
 `
 
 const TimeSlider = (props) => {
+    // want slider to start at 0 and go to total VCD time
     const totalTime = (props.vcdObj.hasOwnProperty('endtime') ? props.vcdObj.endtime : 0)
     const min = 0
 

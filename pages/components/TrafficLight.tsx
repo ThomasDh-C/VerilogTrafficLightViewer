@@ -13,7 +13,6 @@ const TrafficLightmain = styled.div`
     width:120px;
     height:320px;
     border-radius:30px;
-
 `
 
 const CustomLight = styled.div`

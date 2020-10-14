@@ -20,12 +20,12 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Traffic Light</title>
+        <title>ELE206 Lab 4</title>
         <link rel="icon" href="/PUwhite.svg" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}> ELE206 Lab 4 VCD Viewer </h1>
+        <h1 className={styles.title}> ELE206 Lab 4 - VCD Viewer </h1>
         <ImportFromFile setVCD={setVCD} />
 
         <Row>
@@ -34,12 +34,10 @@ const Home = () => {
         </Row>
 
         <TimeSlider vcdObj={vcdObj} time={time} setTime={setTime} />
-
       </main>
 
       <footer className={styles.footer}>
-        <a>
-          ELE206 Fall 2020
+        <a> ELE206 Fall 2020
           <img src="/PU.svg" alt="Princeton Logo" className={styles.logo} />
         </a>
       </footer>

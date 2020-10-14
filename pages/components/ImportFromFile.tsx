@@ -2,21 +2,21 @@ import React from 'react'
 import VCDParser from 'vcd-parser'
 import styled from 'styled-components'
 
-const ImportFromFile = (props) => {
+const ThickBaseDiv = styled.div`
+padding-top: 60px;
+padding-bottom: 20px;
+margin-left: auto;
+margin-right: auto;
+`
 
-    const ThickBaseDiv = styled.div`
-        padding-top: 60px;
-        padding-bottom: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    `
+const ImportFromFile = (props) => {
     let fileReader;
 
+    // parse data from input and store it
     const handleFileRead = (e) => {
         const content = fileReader.result;
         VCDParser.parse(content)
             .then(parsedData => {
-                console.log(parsedData)
                 props.setVCD(parsedData)
             })
             .catch(err => {
@@ -24,6 +24,7 @@ const ImportFromFile = (props) => {
             })
     }
 
+    // parse raw file and send it to parser
     const handleFileChosen = (file) => {
         fileReader = new FileReader()
         fileReader.onloadend = handleFileRead
