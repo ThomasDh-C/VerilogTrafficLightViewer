@@ -5,6 +5,8 @@ import Head from 'next/head'
 import ImportFromFile from './components/ImportFromFile'
 import TrafficLight from './components/TrafficLight'
 import TimeSlider from './components/TimeSlider'
+import DropdownSelector from './components/DropdownSelector'
+import SignalCard from './components/SignalCard'
 
 const Row = styled.div`
   display: flex;
@@ -17,10 +19,6 @@ const Home = () => {
   const [vcdObj, setVCD] = React.useState({})
   const [index, setIndex] = React.useState(0)
 
-  const lamp1 = (vcdObj.hasOwnProperty('signal') ? vcdObj.signal[5].wave[index][1] : '000')
-  const lamp2 = (vcdObj.hasOwnProperty('signal') ? vcdObj.signal[6].wave[index][1] : '000')
-
-
   return (
     <div className={styles.container}>
       <Head>
@@ -30,13 +28,13 @@ const Home = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}> VCD viewer </h1>
-
         <ImportFromFile setVCD={setVCD} />
 
         <Row>
-          <TrafficLight value={lamp1} />
-          <TrafficLight value={lamp2} />
+          <SignalCard index={index} vcdObj={vcdObj} />
+          <SignalCard index={index} vcdObj={vcdObj} />
         </Row>
+
         <TimeSlider vcdObj={vcdObj} index={index} setIndex={setIndex} />
 
       </main>
