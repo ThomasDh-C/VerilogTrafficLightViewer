@@ -3,7 +3,10 @@ import { Slider, InputNumber, Row, Col } from 'antd';
 import styled from 'styled-components'
 
 const WideDiv = styled.div`
-    width: 100%;
+    width: 70%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 `
 
 const TimeSlider = (props) => {
@@ -12,23 +15,24 @@ const TimeSlider = (props) => {
 
     return (
         <WideDiv>
-            <Row >
-                <Col span={12}>
+            <h3>Time slider</h3>
+            <Row>
+                <Col span={18}>
                     <Slider
                         min={min}
                         max={totalTime}
-                        onChange={(value) => props.setIndex(value)}
-                        value={typeof props.index === 'number' ? props.index : 0}
+                        onChange={(value) => props.setTime(value)}
+                        value={typeof props.time === 'number' ? props.time : 0}
                         step={1}
                     />
                 </Col>
-                <Col span={4}>
+                <Col span={6}>
                     <InputNumber
                         min={min}
                         max={totalTime}
                         style={{ margin: '0 16px' }}
-                        value={props.index}
-                        onChange={(value) => props.setIndex(value)}
+                        value={props.time}
+                        onChange={(value) => props.setTime(value)}
                         step={1}
                     />
                 </Col>

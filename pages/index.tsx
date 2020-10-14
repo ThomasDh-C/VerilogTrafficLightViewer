@@ -15,9 +15,7 @@ const Row = styled.div`
 
 const Home = () => {
   const [vcdObj, setVCD] = React.useState({})
-  const [index, setIndex] = React.useState(0)
-  const [totalTimeWash, setTimeWash] = React.useState(0)
-  const [totalTimeProsp, setTimeProsp] = React.useState(0)
+  const [time, setTime] = React.useState(0)
 
   return (
     <div className={styles.container}>
@@ -27,15 +25,15 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}> VCD viewer </h1>
+        <h1 className={styles.title}> ELE206 Lab 4 VCD Viewer </h1>
         <ImportFromFile setVCD={setVCD} />
 
         <Row>
-          <SignalCard index={index} vcdObj={vcdObj} setTotalTime={setTimeWash} street="Washington Road" />
-          <SignalCard index={index} vcdObj={vcdObj} setTotalTime={setTimeProsp} street="Prospect Avenue" />
+          <SignalCard time={time} vcdObj={vcdObj} street="Washington Road" />
+          <SignalCard time={time} vcdObj={vcdObj} street="Prospect Avenue" />
         </Row>
 
-        <TimeSlider vcdObj={vcdObj} index={index} setIndex={setIndex} />
+        <TimeSlider vcdObj={vcdObj} time={time} setTime={setTime} />
 
       </main>
 

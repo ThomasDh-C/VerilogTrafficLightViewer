@@ -7,6 +7,8 @@ const TrafficLightmain = styled.div`
     display: block;
     padding-top: 1px;
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #333333;
     width:120px;
     height:320px;
