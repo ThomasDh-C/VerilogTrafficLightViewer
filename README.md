@@ -1,6 +1,7 @@
 # Verilog Traffic Light Viewer
 A visualiser for VCD files produced by the Icarus Verilog compiler.
 To be used in conjunction with Lab 4 of Princeton's ELE206 course.
+
 ![App screenshot](https://github.com/ThomasDh-C/VerilogTrafficLightViewer/blob/master/readme_imgs/readme.png)
 
 ## Getting Started
