@@ -6,6 +6,7 @@ To be used in conjunction with Lab 4 of Princeton's ELE206 course.
 
 ## Getting Started
 To run the development server:
+npm install
 npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) 
